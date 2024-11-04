@@ -110,6 +110,6 @@ if __name__ == "__main__":
     # Create blocks in the A_missing dataset with unique values in column A
     A_missing_blocks = separator.create_blocks_in_A_missing()
 
-    # Initialize PossibleWorldsGenerator with A_missing_blocks and execute the query
+    # Initialize PossibleWorldsGenerator with A_missing_blocks and execute the queryy
     generator = PossibleWorldsGenerator(A_missing_blocks)
     query_results, max_sum, max_prob = generator.execute_sum_query()
