@@ -95,7 +95,7 @@ class PossibleWorldsGenerator:
 # Example usage:
 if __name__ == "__main__":
     # Initialize the DataSeparator class with the file path
-    file_path = '/path/to/your/prob_db.csv'  # Replace with your actual file path
+    file_path = '/Users/zahramousavi/Desktop/my subject/Idris data/prob_db.csv'  # Replace with your actual file path
     separator = DataSeparator(file_path)
 
     # Load the data
