@@ -2,7 +2,7 @@ import pandas as pd
 from itertools import product
 
 # Step 1: Load the dataset
-df = pd.read_csv('/Users/zahramousavi/Desktop/my subject/Idris data/prob_db.csv')
+df = pd.read_csv('/Users/zahramousavi/Desktop/My Files/Fall2024/BIDP/new_data.csv')
 
 # Step 2: Identify blocks and split into certain and uncertain data
 block_counts = df['block_id'].value_counts()
