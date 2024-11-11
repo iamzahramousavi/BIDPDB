@@ -80,7 +80,10 @@ domain_B, blocks_B_missing = get_domain_and_count(D_uncertain, 'B')
 # print(f"Blocks with B missing: {blocks_B_missing}")
 
 
-# Step 6: Optimized Query Answering for Feature A
+import pandas as pd
+from itertools import product
+
+# Step 6: Optimized Query Answering for Feature A and B
 def find_best_world_iteratively(df, feature, domain, num_blocks, certain_sum):
     """
     Find the best possible world by comparing one world at a time to reduce memory usage.
@@ -98,6 +101,7 @@ def find_best_world_iteratively(df, feature, domain, num_blocks, certain_sum):
         for block_id, value in zip(blocks, world):
             selected_row = df[(df['block_id'] == block_id) & (df[feature] == value)]
 
+            # If the row exists, calculate the probability
             if not selected_row.empty:
                 prob = selected_row['probability'].iloc[0]
                 total_probability *= prob
@@ -105,7 +109,7 @@ def find_best_world_iteratively(df, feature, domain, num_blocks, certain_sum):
 
         total_sum = world_sum + certain_sum
 
-        # Update the best world if the current one has a higher probability
+        # Check if the current world has a higher probability than the best one so far
         if total_probability > best_probability:
             best_probability = total_probability
             best_world_sum = total_sum
