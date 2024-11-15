@@ -80,7 +80,8 @@ domain_B, blocks_B_missing = get_domain_and_count(D_uncertain, 'B')
 # print(f"Blocks with B missing: {blocks_B_missing}")
 
 
-
+import pandas as pd
+from itertools import product
 
 # Step 6: Optimized Query Answering for Feature A and B
 def find_best_world_iteratively(df, feature, domain, num_blocks, certain_sum):
